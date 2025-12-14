@@ -349,3 +349,30 @@ footer {
         width: 100%;
     }
 }
+/* ===== HERO FIX ===== */
+
+.hero-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.coder-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Prevent terminal from stretching */
+.terminal {
+    max-width: 520px;
+    flex-shrink: 0;
+}
+
+/* Fix empty space */
+.coder-hero {
+    display: flex;
+    align-items: center;
+    min-height: 90vh;
+}
