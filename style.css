@@ -159,14 +159,17 @@ footer {
 }
 
 .hero-image img {
-    width: 260px;
-    height: 260px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
+    object-position: top center; /* keeps face centered */
     border-radius: 50%;
-    border: 4px solid var(--accent);
-    box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+    padding: 8px;
+    background: linear-gradient(135deg, var(--accent), transparent);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     animation: float 4s ease-in-out infinite;
 }
+
 
 /* Floating animation */
 @keyframes float {
