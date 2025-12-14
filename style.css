@@ -1,3 +1,30 @@
+/* ===== GLOBAL CODER THEME ===== */
+:root {
+  --bg: #020617;
+  --panel: #020617;
+  --text: #e5e7eb;
+  --accent: #38bdf8;
+  --accent-green: #22c55e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
 :root {
     --bg: #0b0f1a;
     --text: #e5e7eb;
@@ -425,4 +452,120 @@ footer {
     border-right: 2px solid #22c55e;
     animation: typing 3s steps(22) infinite alternate,
                blink 0.8s infinite;
+}
+/* ===== HERO SECTION ===== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at left, rgba(56,189,248,0.15), transparent 40%),
+    radial-gradient(circle at right, rgba(34,197,94,0.15), transparent 40%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+/* LEFT TEXT */
+.hero-name {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.hero-role {
+  font-size: 1.3rem;
+  color: var(--accent-green);
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 25px;
+}
+
+/* TAGS */
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-tags span {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(56,189,248,0.4);
+  color: var(--accent);
+}
+
+/* RIGHT IMAGE */
+.hero-image-wrapper {
+  position: relative;
+  width: 280px;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+  justify-self: end;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.img-label {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  padding: 6px 14px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+/* ===== GLOBAL SECTION STYLE ===== */
+
+section {
+  padding: 100px 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 30px;
+}
+
+section p, section li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #cbd5f5;
+}
+/* ===== MOBILE FIX ===== */
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image-wrapper {
+    margin: auto;
+  }
+
+  .hero-desc {
+    margin: auto;
+  }
+
+  .hero-tags {
+    justify-content: center;
+  }
 }
