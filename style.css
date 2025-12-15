@@ -1,18 +1,4 @@
-/* ===== RESET & BASE ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  font-family: 'JetBrains Mono', monospace;
-  scroll-behavior: smooth;
-}
-
-/* ===== THEME ===== */
+/* ===== GLOBAL THEME ===== */
 :root {
   --bg: #020617;
   --panel: #020617;
@@ -21,47 +7,59 @@ html, body {
   --accent-green: #22c55e;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
-  padding-top: 80px; /* ✅ FIX fixed-navbar overlap */
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: hidden; /* 🔥 IMPORTANT FIX */
 }
 
-/* ===== CONTAINER ===== */
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
-/* ===== NAVBAR (FINAL FIX) ===== */
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 64px;
   padding: 0 16px;
+  background: rgba(2,6,23,0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+.nav-left,
+.nav-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: rgba(2, 6, 23, 0.9);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
 }
 
-/* Logo */
+.nav-right {
+  gap: 16px;
+}
+
 .logo {
-  font-size: 1.2rem;
-  font-weight: 600;
-  white-space: nowrap; /* ✅ NEVER BREAK */
+  font-size: 1.1rem;
+  color: var(--accent);
 }
 
-/* Nav links */
 .nav-links {
   display: flex;
+  gap: 20px;
   list-style: none;
-  gap: 22px;
 }
 
 .nav-links a {
@@ -70,17 +68,18 @@ body {
   font-size: 0.9rem;
 }
 
-/* Theme toggle */
 #theme-toggle {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 1.2rem;
   cursor: pointer;
+  color: var(--text);
 }
 
 /* ===== HERO ===== */
 .hero {
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  padding-top: 64px;
   display: flex;
   align-items: center;
   background:
@@ -89,23 +88,21 @@ body {
 }
 
 .hero-grid {
-  width: 100%;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   align-items: center;
 }
 
-/* Hero text */
 .hero-name {
-  font-size: 3rem;
+  font-size: 2.6rem;
   color: var(--accent);
 }
 
 .hero-role {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--accent-green);
-  margin: 12px 0 18px;
+  margin: 12px 0;
 }
 
 .hero-desc {
@@ -114,26 +111,24 @@ body {
   font-size: 0.95rem;
 }
 
-/* Tags */
 .hero-tags {
-  margin-top: 18px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .hero-tags span {
-  padding: 6px 14px;
-  font-size: 0.75rem;
-  border-radius: 20px;
   border: 1px solid rgba(56,189,248,0.4);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
   color: var(--accent);
 }
 
-/* Hero image */
 .hero-image-wrapper {
   width: 260px;
-  height: 330px;
+  height: 340px;
   border-radius: 18px;
   overflow: hidden;
   justify-self: end;
@@ -145,18 +140,29 @@ body {
   object-fit: cover;
 }
 
+.img-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  border-radius: 20px;
+}
+
 /* ===== SECTIONS ===== */
 section {
-  padding: 90px 0;
+  padding: 80px 16px;
 }
 
 section h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--accent);
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
-section p, section li {
+section p,
+section li {
   font-size: 0.95rem;
   line-height: 1.7;
   color: #cbd5f5;
@@ -166,7 +172,7 @@ section p, section li {
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
+  gap: 12px;
 }
 
 .grid span {
@@ -176,121 +182,59 @@ section p, section li {
   text-align: center;
 }
 
-/* ===== PROJECTS ===== */
-.project {
-  margin-bottom: 80px;
-}
-
-.tech {
-  color: var(--accent);
-  font-size: 0.9rem;
-  margin-top: 6px;
-}
-
-/* 🔥 PROJECT IMAGES – FINAL FIX */
+/* ===== PROJECT IMAGES (FINAL FIX) ===== */
 .images {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
 }
 
 .images img {
   width: 100%;
-  height: 160px;              /* ✅ FIX huge images */
+  height: 160px;
   object-fit: cover;
-  border-radius: 12px;
-  background: #020617;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.images img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 10px 25px rgba(56,189,248,0.25);
+  border-radius: 10px;
+  display: block;
 }
 
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 24px;
+  font-size: 0.85rem;
   color: #94a3b8;
 }
 
-/* ===== SCROLL ANIMATION ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== TYPING EFFECT ===== */
-.typing {
-  width: fit-content;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid var(--accent-green);
-  animation: typing 3s steps(22) infinite alternate,
-             blink 0.8s infinite;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-/* ===== MOBILE – GUARANTEED FIX ===== */
+/* ===== MOBILE FIX (THIS SOLVES YOUR ISSUE) ===== */
 @media (max-width: 768px) {
 
-  body {
-    padding-top: 100px;
-  }
-
-  /* Header */
   .nav-links {
-    display: none; /* ✅ STOP header break */
+    display: none; /* 🔥 header fix */
   }
 
   .logo {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
-  /* Hero */
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
   }
 
   .hero-image-wrapper {
-    margin: auto;
-    width: 220px;
-    height: 280px;
+    margin: 20px auto 0;
   }
 
   .hero-desc {
     margin: auto;
-    padding: 0 10px;
   }
 
   .hero-tags {
     justify-content: center;
   }
 
-  /* Images */
   .images img {
-    height: 140px;
-  }
-
-  section {
-    padding: 70px 0;
+    height: 140px; /* mobile image fix */
   }
 }
