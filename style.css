@@ -353,3 +353,26 @@ footer {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
+/* ===== TYPING ANIMATION ===== */
+.hero-role {
+  font-size: 1.2rem;
+  color: var(--accent-green);
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+#typing-text {
+  white-space: nowrap;
+}
+
+.cursor {
+  color: var(--accent);
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
