@@ -182,7 +182,7 @@ section li {
   text-align: center;
 }
 
-/* ===== PROJECT IMAGE LAYOUT (FINAL & CORRECT) ===== */
+/* ===== PROJECT IMAGE LAYOUT + ANIMATIONS (FINAL) ===== */
 
 .images {
   display: grid;
@@ -193,14 +193,24 @@ section li {
 
 .images img {
   width: 100%;
-  height: auto;                 /* 🔥 DO NOT FORCE HEIGHT */
-  object-fit: contain;          /* 🔥 SHOW FULL IMAGE */
+  height: auto;                 /* full image */
+  object-fit: contain;          /* no cropping */
   border-radius: 14px;
   background: #020617;
   padding: 10px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
   display: block;
+
+  /* 🔥 ANIMATION */
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
+
+.images img:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(56,189,248,0.35);
+}
+
 
 
 /* ===== FOOTER ===== */
@@ -249,6 +259,7 @@ footer {
     padding: 6px;
   }
 }
+
 @media (max-width: 768px) {
   .images {
     grid-template-columns: 1fr;
@@ -256,5 +267,6 @@ footer {
 
   .images img {
     padding: 6px;
+    transform: none;   /* disable hover jump on touch */
   }
 }
