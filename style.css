@@ -41,16 +41,17 @@ body {
 /* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
-  width: 100%;
   top: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(8px);
-  padding: 16px 8%;
+  width: 100%;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  padding: 18px 60px;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(12px);
 }
+
 
 .navbar ul {
   display: flex;
@@ -360,5 +361,27 @@ footer {
   /* Project images spacing */
   .images {
     grid-template-columns: 1fr;
+  }
+}
+/* ===== MOBILE HEADER FIX ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 14px 18px;
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    white-space: nowrap;   /* prevents Anuj / Patil breaking */
+  }
+
+  .nav-links {
+    display: none; /* hide menu on mobile (clean & professional) */
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
   }
 }
