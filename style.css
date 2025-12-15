@@ -95,6 +95,8 @@ body {
   font-size: 1.2rem;
   color: var(--accent-green);
   margin: 12px 0;
+  display: flex;
+  align-items: center;
 }
 
 .hero-desc {
@@ -140,6 +142,22 @@ body {
   padding: 4px 12px;
   font-size: 0.7rem;
   border-radius: 20px;
+}
+
+/* ===== TYPING ANIMATION ===== */
+#typing-text {
+  white-space: nowrap;
+}
+
+.cursor {
+  color: var(--accent);
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 /* ===== SECTIONS ===== */
@@ -211,9 +229,6 @@ section li {
     transform: none;
   }
 }
-
-
-
 
 /* ===== FOOTER ===== */
 footer {
@@ -329,50 +344,4 @@ footer {
 /* ===== PROJECT SPACING ===== */
 .project {
   margin-bottom: 80px; /* Space between projects */
-}
-/* ===== TYPING ANIMATION ===== */
-.hero-role {
-  font-size: 1.2rem;
-  color: var(--accent-green);
-  margin: 12px 0;
-  display: flex;
-  align-items: center;
-}
-
-#typing-text {
-  white-space: nowrap;
-}
-
-.cursor {
-  color: var(--accent);
-  font-weight: bold;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-/* ===== TYPING ANIMATION ===== */
-.hero-role {
-  font-size: 1.2rem;
-  color: var(--accent-green);
-  margin: 12px 0;
-  display: flex;
-  align-items: center;
-}
-
-#typing-text {
-  white-space: nowrap;
-}
-
-.cursor {
-  color: var(--accent);
-  font-weight: bold;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
 }
