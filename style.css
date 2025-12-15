@@ -270,3 +270,45 @@ footer {
     transform: none;   /* disable hover jump on touch */
   }
 }
+/* ================================
+   PROJECT IMAGES – FINAL OVERRIDE
+   ================================ */
+
+.project .images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.project .images img {
+  width: 100%;
+  height: auto !important;      /* FORCE full image */
+  max-height: none !important;  /* REMOVE clipping */
+  object-fit: contain !important;
+  border-radius: 14px;
+  background: #020617;
+  padding: 10px;
+  display: block;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.project .images img:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(56,189,248,0.35);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .project .images {
+    grid-template-columns: 1fr;
+  }
+
+  .project .images img {
+    padding: 6px;
+    transform: none;
+  }
+}
