@@ -190,7 +190,7 @@ section li {
   display: flex;
   flex-direction: column;   /* 🔥 KEY FIX */
   gap: 28px;
-  margin-top: 24px;
+  margin-top: 60px; /* 🔥 INCREASED SPACE (two lines) between tech stack and screenshots */
 }
 
 .project .images img {
@@ -288,7 +288,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  margin-top: 24px;
+  margin-top: 60px; /* 🔥 INCREASED SPACE (two lines) between tech stack and screenshots */
 }
 
 .project .images img {
@@ -336,9 +336,5 @@ footer {
 
 /* ===== PROJECT SPACING ===== */
 .project {
-  margin-bottom: 80px; /* Increased space between projects */
-}
-
-.project .images {
-  margin-top: 40px; /* More space between title/desc and screenshots */
+  margin-bottom: 80px; /* Space between projects */
 }
