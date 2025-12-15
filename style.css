@@ -182,34 +182,44 @@ section li {
   text-align: center;
 }
 
-/* ===== PROJECT IMAGE LAYOUT + ANIMATIONS (FINAL) ===== */
+/* ================================
+   PROJECT SCREENSHOTS – FINAL FIX
+   ================================ */
 
-.images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+.project .images {
+  display: flex;
+  flex-direction: column;   /* 🔥 KEY FIX */
+  gap: 28px;
   margin-top: 24px;
 }
 
-.images img {
+.project .images img {
   width: 100%;
-  height: auto;                 /* full image */
-  object-fit: contain;          /* no cropping */
+  max-width: 100%;
+  height: auto;             /* 🔥 FULL IMAGE */
+  object-fit: contain;
   border-radius: 14px;
   background: #020617;
-  padding: 10px;
-  display: block;
+  padding: 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
 
-  /* 🔥 ANIMATION */
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  /* animation */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.images img:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 18px 40px rgba(56,189,248,0.35);
+.project .images img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 45px rgba(56,189,248,0.35);
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .project .images img {
+    padding: 8px;
+    transform: none;
+  }
+}
+
 
 
 
