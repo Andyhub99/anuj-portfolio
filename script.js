@@ -11,25 +11,32 @@ function revealOnScroll() {
 }
 
 window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();  // 🔥 Initial call to reveal visible sections
+revealOnScroll();
 
 // TYPING ANIMATION FOR "AI & Django Developer"
 const text = "AI & Django Developer";
 const typingText = document.getElementById("typing-text");
+const cursor = document.querySelector(".cursor");
 let index = 0;
 
 function typeWriter() {
     if (index < text.length) {
         typingText.innerHTML += text.charAt(index);
         index++;
-        setTimeout(typeWriter, 100);  // 🔥 Speed: 100ms per letter (adjust if too fast/slow)
+        setTimeout(typeWriter, 150);  // 🔥 Slower speed (150ms) for better visibility
     } else {
-        // After typing, hide cursor after a delay
+        // Hide cursor after typing completes
         setTimeout(() => {
-            document.querySelector(".cursor").style.display = "none";
-        }, 1000);
+            cursor.style.display = "none";
+        }, 500);
     }
 }
 
-// Start typing when page loads
-window.addEventListener("load", typeWriter);
+// Start typing after DOM loads
+document.addEventListener("DOMContentLoaded", () => {
+    if (typingText) {
+        typeWriter();
+    } else {
+        console.error("Typing text element not found!");
+    }
+});
