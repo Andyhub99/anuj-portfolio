@@ -125,3 +125,8 @@ body {
     font-size: 1.05rem;
   }
 }
+@media (max-width: 768px) {
+  .images img {
+    height: 150px;   /* smaller on mobile */
+  }
+}
