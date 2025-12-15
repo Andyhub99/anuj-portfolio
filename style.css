@@ -322,3 +322,23 @@ footer {
     transform: none;
   }
 }
+
+/* ===== CONTACT ANIMATION ===== */
+#contact a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: var(--accent-green);
+}
+
+/* ===== PROJECT SPACING ===== */
+.project {
+  margin-bottom: 80px; /* Increased space between projects */
+}
+
+.project .images {
+  margin-top: 40px; /* More space between title/desc and screenshots */
+}
