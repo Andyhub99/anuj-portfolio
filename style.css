@@ -330,3 +330,35 @@ footer {
     align-items: center;
   }
 }
+/* ===== FINAL MOBILE FIX (DO NOT SKIP) ===== */
+@media (max-width: 768px) {
+
+  /* Fix navbar horizontal squeeze */
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  /* Force all sections to behave like container */
+  section {
+    padding: 70px 0;
+  }
+
+  section > * {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Hero fine-tuning */
+  .hero {
+    padding-top: 110px;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  /* Project images spacing */
+  .images {
+    grid-template-columns: 1fr;
+  }
+}
